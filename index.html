@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Инструкция по установке</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Подключаем Font Awesome для иконок -->
+  <link rel="stylesheet" href="cdnjs.cloudflare.com">
+  <style>
+    /* Базовые стили */
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #e9ecef;
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+        scroll-behavior: smooth;
+        color: #333;
+    }
+    /* Секция Hero с фоновым изображением */
+    .hero-section {
+        background: url('https://i.pinimg.com/originals/91/bc/c4/91bcc4cd174cd6c2e87ce6305e6d1731.gif') no-repeat center center;
+        background-size: cover;
+        background-attachment: fixed; /* Эффект параллакса */
+        color: white;
+        padding: 80px 20px;
+        text-align: center;
+        position: relative;
+    }
+    .hero-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.6); /* Затемнение */
+    }
+    .hero-content {
+        position: relative;
+        z-index: 2;
+    }
+    .hero-content h1 {
+        font-size: 2.5em;
+        margin-bottom: 10px;
+    }
+
+    .container {
+        max-width: 800px;
+        margin: 40px auto;
+        background: #fff;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeInSlide 0.5s ease-out forwards;
+        transition: box-shadow 0.3s ease;
+    }
+    .container:hover {
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    }
+    @keyframes fadeInSlide {
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    h2 {
+      color: #0056b3;
+      border-bottom: 2px solid #0056b3;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+    }
+    #typing-container {
+      font-family: 'Courier New', monospace;
+      padding: 20px;
+      background-color: #f9f9f9;
+      border-radius: 8px;
+      margin: 20px 0;
+      border: 1px solid #ddd;
+    }
+    .typing-text {
+      white-space: pre-wrap;
+      color: #333;
+    }
+    .cursor {
+      display: inline-block;
+      width: 10px;
+      margin-left: 3px;
+      background-color: #333;
+      animation: blink 1s step-end infinite;
+      vertical-align: middle;
+      height: 1.2em;
+    }
+    @keyframes blink {
+      from, to { opacity: 1; }
+      50% { opacity: 0; }
+    }
+
+    .info {
+      color: #007bff;
+      font-weight: bold;
+    }
+    .warning {
+      color: #f0ad4e;
+      font-weight: bold;
+    }
+    .footer {
+      margin-top: 30px;
+      text-align: center;
+      font-size: 0.9em;
+      color: #6c757d;
+      border-top: 1px solid #eee;
+      padding-top: 20px;
+      opacity: 0;
+      animation: fadeIn 1s ease-out forwards 0.5s;
+    }
+    @keyframes fadeIn {
+        to { opacity: 1; }
+    }
+    .trust-badge {
+      display: inline-block;
+      margin: 5px;
+      padding: 5px 10px;
+      background-color: #d4edda;
+      color: #155724;
+      border-radius: 4px;
+      transition: transform 0.2s;
+    }
+    .trust-badge:hover {
+        transform: scale(1.05);
+    }
+    .download-btn {
+        background-color: #28a745;
+        color: white;
+        padding: 12px 24px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1em;
+        margin-top: 20px;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .download-btn:hover {
+        background-color: #218838;
+        transform: translateY(-2px);
+    }
+
+    /* Адаптивный дизайн */
+    @media (max-width: 768px) {
+        .container {
+            margin: 20px;
+            padding: 20px;
+        }
+        .hero-content h1 {
+            font-size: 1.8em;
+        }
+    }
+  </style>
+</head>
+<body>
+
+<div class="hero-section">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <h1>Приложение от Артема</h1>
+        <p>Простая и безопасная инструкция по запуску</p>
+    </div>
+</div>
+
+<div class="container">
+<section class="instructions">
+  <h2><i class="fas fa-play-circle"></i> Как запустить приложение (пошаговая инструкция):</h2>
+  <div id="typing-container">
+    <div class="typing-text" id="typing-text"></div>
+  </div>
+  <!-- Добавил иконку в кнопку -->
+  <button class="download-btn" onclick="window.location.href='https://disk.yandex.ru/d/JepUksiHCq-_Pw'">
+    <i class="fas fa-download"></i> Скачать видеоинструкцию
+  </button>
+</section>
+
+<footer class="footer">
+  <p>&copy; 2025 Артем. Все приложения бесплатны для использования.</p>
+  <p>
+    <span class="trust-badge"><i class="fas fa-shield-alt"></i> Безопасно сканировано✅</span>
+    <span class="trust-badge"><i class="fas fa-lock"></i> SSL Secure Connection ✅</span>
+  </p>
+</footer>
+</div>
+
+<script>
+  // Текст для анимации
+  const lines = [
+    "1. Скачайте архив: Нажмите на кнопку «Скачать файл» выше. Вы будете перенаправлены на Яндекс.Диск. Скачайте ZIP‑архив на свой компьютер.",
+    "2. Распакуйте архив: Откройте скачанный ZIP‑файл, щёлкните правой кнопкой мыши и выберите «Извлечь всё» или «Распаковать здесь». Появится новая папка.",
+    "3. Запустите файл: Зайдите в эту новую папку и найдите исполняемый файл с расширением .exe (например, игра.exe). Дважды нажмите на него для запуска.",
+    "⚠️ Обратите внимание: Антивирусы могут выдавать предупреждения о файлах .exe, созданных из Python‑скриптов (ложное срабатывание).",
+    "✅ Рекомендуется: Если вы сомневаетесь, загрузите скачанный файл на сервис VirusTotal.com для проверки сразу несколькими антивирусами.",
+    "💡 Для приложения MOD.exe: при запуске вам нужно будет ввести имя процесса, исходное число и новое значение.",
+    "Если не поняли — смотрите видеоинструкцию: https://disk.yandex.ru/d/JepUksiHCq-_Pw"
+  ];
+
+  let currentLine = 0;
+  let currentChar = 0;
+  let output = '';
+  const typingTextElement = document.getElementById('typing-text');
+
+  function type() {
+    if (currentLine < lines.length) {
+      output += lines[currentLine][currentChar];
+      // Используем CSS-класс для курсора
+      typingTextElement.innerHTML = output + '<span class="cursor"></span>';
+
+      currentChar++;
+      if (currentChar >= lines[currentLine].length) {
+        currentChar = 0;
+        currentLine++;
+        output += '<br>';
+      }
+      setTimeout(type, 30);
+    } else {
+      typingTextElement.innerHTML = output;
+      // Применяем стилизацию через JS после окончания анимации
+      const linesArray = typingTextElement.innerHTML.split('<br>');
+      for (let i = 0; i < linesArray.length; i++) {
+        if (linesArray[i].startsWith('⚠️')) {
+          linesArray[i] = `<span class="warning">${linesArray[i]}</span>`;
+        } else if (linesArray[i].startsWith('✅') || linesArray[i].startsWith('💡')) {
+           linesArray[i] = `<span class="info">${linesArray[i]}</span>`;
+        }
+      }
+      typingTextElement.innerHTML = linesArray.join('<br>');
+    }
+  }
+
+  window.onload = type;
+</script>
+
+</body>
+</html>
